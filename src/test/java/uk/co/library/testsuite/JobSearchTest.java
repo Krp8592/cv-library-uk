@@ -25,6 +25,7 @@ public class JobSearchTest extends BaseTest {
     @Test(dataProvider = "credentials", dataProviderClass = TestData.class)
     public void verifyJobSearchResultUsingDifferentDataSet(String jobTitle, String location, String distance, String salaryMin, String salaryMax, String salaryType, String jobType,
                                                            String result) throws InterruptedException {
+        homePage.accpetCookies();
         homePage.enterJobTitel(jobTitle);
         homePage.enterLocation(location);
         homePage.selectDistance(distance);

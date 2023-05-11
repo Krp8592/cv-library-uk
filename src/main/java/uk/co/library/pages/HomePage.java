@@ -10,7 +10,8 @@ import uk.co.library.utility.Utility;
 
 public class HomePage extends Utility {
 
-
+    @FindBy(xpath = "//button[@id='save']")
+    WebElement acceptCookies;
     @FindBy(xpath = "//input[@id='keywords']")
     WebElement keywords;
     @FindBy(xpath = "//input[@id='location']")
@@ -86,6 +87,13 @@ public class HomePage extends Utility {
         Reporter.log("Click on find jobs button" + findJobsBtn.toString());
         CustomListeners.test.log(Status.PASS, "Click on find jobs button" + findJobsBtn.toString());
         clickOnElement(findJobsBtn);
+    }
+
+    public void accpetCookies() throws InterruptedException {
+        switchToFrame("gdpr-consent-notice");
+        Thread.sleep(1000);
+        clickOnElement(acceptCookies);
+        switchToDefaultContent();
     }
 
 }

@@ -428,4 +428,11 @@ public class Utility extends ManageBrowser {
             checkBox.click();
         }
     }
+
+    public void switchToFrame(String nameOrID){
+        driver.switchTo().frame(nameOrID);
+    }
+    public void switchToDefaultContent(){
+        driver.switchTo().defaultContent();
+    }
 }
